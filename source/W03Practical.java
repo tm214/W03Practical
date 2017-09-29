@@ -1,0 +1,106 @@
+public class W03Practical {
+	public static void main(String [] args) {
+			
+		    EasyIn2 reader = new EasyIn2();
+		
+		// Declaring and initialising each indivudal price of expensive party objects
+		
+			double birthdayCake = 24.75;              // price per birthday cake in £
+			double plateSandwiches = 13.50;           // price per plate of sandwhiches in £
+			double plateJellyCream = 12.75;           // price per plate of jelly and ice cream in £
+			double plateSausage = 13.50;			  // price per plate of sausages in £
+			double magician = 69.99;                  // price to hire one magician in £
+			double passGame = 18.10;                  // price per game of pass-the parcel in £
+			double heliumBalloon = 1.02;              // price per helium balloon in £
+			double partyBag = 2.55;                   // price per party bag in £
+			double invitation = 1.33;                 // price per invitation in £
+			double venue = 98.99;                     // price to hire the venue in £
+			
+		// Declaring and initialising each individual price of cheaper party objects
+		
+			double cBirthdayCake = 23.00;
+			double cPlateSandwiches = 13.00;
+			double cPlateJellyCream = 12.00;
+			double cPlateSausage = 13.00;
+			double cMagician = 60.00;
+			double cPassGame = 17.00;
+			double cHeliumBalloon = 0.90;
+			double cPartyBag = 2.00;
+			double cInvitation = 1.00;
+			double cVenue = 90.00;
+			
+		// Using operations to calculate the price of expensive party objects which are required in bulk
+		
+			double totalSandwiches = plateSandwiches * 4;
+			double totalSausages = plateSausage * 4;
+			double totalJellyCream = plateJellyCream * 4;
+			double totalPassGames = passGame * 2;
+			double totalHeliumBalloons = heliumBalloon * 16;
+			double totalPartyBag = partyBag * 15;
+			double totalInvitation = invitation * 15;
+
+		// using operations to calculate the price of expensive party objects which are required in bulk
+		
+			double cTotalSandwiches = cPlateSandwiches * 4;
+			double cTotalSausages = cPlateSausage * 4;
+			double cTotalJellyCream = cPlateJellyCream * 4;
+			double cTotalPassGames = cPassGame * 2;
+			double cTotalHeliumBalloons = cHeliumBalloon * 16;
+			double cTotalPartyBag = cPartyBag * 15;
+			double cTotalInvitation = cInvitation * 15;
+			
+		// Calculating the expensive total cost
+		
+			double totalCost = (totalSandwiches + 
+			totalSausages + 
+			totalJellyCream + 
+			totalPassGames + 
+			totalHeliumBalloons + 
+			totalPartyBag + 
+			totalInvitation + 
+			birthdayCake + 
+			magician +
+			venue);
+			
+		// Calculating the cheaper total cost
+		
+		double cTotalCost = (cTotalSandwiches +
+			cTotalSausages +
+			cTotalJellyCream +
+			cTotalPassGames +
+			cTotalHeliumBalloons +
+			cTotalPartyBag +
+			cTotalInvitation +
+			cBirthdayCake +
+			cMagician +
+			cVenue);
+		
+		// Calculating the savings on the cheaper option
+		
+		double percentageSavings = (cTotalCost / totalCost) * 100;
+		int percentage = (int) (100 - percentageSavings);
+			
+		// Printing in system the total cost
+		System.out.println("Press 1 for our normal quote and 2 for our cheaper option");
+			int userChoice = reader.getInt(); 
+			
+			switch(userChoice){
+				case 1: 
+					System.out.println("The total price for your birthday will be: £" + totalCost);
+					break; 
+					
+				case 2:
+					System.out.println("The total price for your birthday will be: £" + cTotalCost + ". You are saving " + percentage + "%");
+					break;
+				
+				case 3:
+					break;
+					
+					
+				default: 
+					System.out.println("Invalid Input");
+					break; 
+			} 
+			
+	}
+}
